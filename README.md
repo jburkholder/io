@@ -1,2 +1,2 @@
 # io
-An input output framework.
+An input-output framework.
