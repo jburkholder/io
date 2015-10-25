@@ -13,48 +13,84 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\1 - Input">
+      <UniqueIdentifier>{158e5e89-ecd1-4cd8-9ce6-841c8c5c53d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\2 - Input Transformation">
+      <UniqueIdentifier>{c6fadea6-81f0-4e75-a994-6bcd6959bb93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\4 - Output Transformation">
+      <UniqueIdentifier>{8614c879-cc56-4c71-b47f-0e0b36899738}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\5 - Output">
+      <UniqueIdentifier>{39d8d707-bb00-4943-9860-e723bffb0f20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\1 - Input">
+      <UniqueIdentifier>{340efc51-5a80-446d-9205-8e7a0716d458}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\2 - Input Transformation">
+      <UniqueIdentifier>{f929499a-dd18-448f-833b-fa4776524cdf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\3 - State">
+      <UniqueIdentifier>{3a28d5c7-5dea-4c4f-a30a-4e3693c32545}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\4 - Output Transformation">
+      <UniqueIdentifier>{c5b1c40c-10cc-4dfe-8a33-15309a3c0d9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\5 - Output">
+      <UniqueIdentifier>{209dd360-dcfe-4c0b-87d8-31bfe8b4779f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\3 - State">
+      <UniqueIdentifier>{d0dcf826-07b1-4d5b-a16e-c4f6ab94e5aa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="input.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\1 - Input</Filter>
     </ClCompile>
     <ClCompile Include="input_transformation.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="output.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="output_transformation.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\2 - Input Transformation</Filter>
     </ClCompile>
     <ClCompile Include="state.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\3 - State</Filter>
+    </ClCompile>
+    <ClCompile Include="output_transformation.cpp">
+      <Filter>Source Files\4 - Output Transformation</Filter>
+    </ClCompile>
+    <ClCompile Include="output.cpp">
+      <Filter>Source Files\5 - Output</Filter>
+    </ClCompile>
+    <ClCompile Include="input_for_windows_desktop.cpp">
+      <Filter>Source Files\1 - Input</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="input.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="input_transformation.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="state.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="output_transformation.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="output.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="debug.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="temporary.hpp">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="input.hpp">
+      <Filter>Header Files\1 - Input</Filter>
+    </ClInclude>
+    <ClInclude Include="input_transformation.hpp">
+      <Filter>Header Files\2 - Input Transformation</Filter>
+    </ClInclude>
+    <ClInclude Include="state.hpp">
+      <Filter>Header Files\3 - State</Filter>
+    </ClInclude>
+    <ClInclude Include="output.hpp">
+      <Filter>Header Files\5 - Output</Filter>
+    </ClInclude>
+    <ClInclude Include="output_transformation.hpp">
+      <Filter>Header Files\4 - Output Transformation</Filter>
+    </ClInclude>
+    <ClInclude Include="input_for_windows_desktop.hpp">
+      <Filter>Header Files\1 - Input</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
