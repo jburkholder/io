@@ -11,7 +11,7 @@ static std::mutex input_transformation_main_mutex;
 void input_transformation_main() {
 	std::lock_guard<std::mutex> input_transformation_main_lock( input_transformation_main_mutex );
 	try {
-		print( "Hello", ", ", "Input Transformation", "\n" );
+		debug_print( "Hello", ", ", "Input Transformation" );
 	} catch ( ... ) {
 		throw;
 	}

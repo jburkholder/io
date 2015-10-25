@@ -11,7 +11,7 @@ static std::mutex output_main_mutex;
 void output_main() {
 	std::lock_guard<std::mutex> output_main_lock( output_main_mutex );
 	try {
-		print( "Hello", ", ", "Output", "\n" );
+		debug_print( "Hello", ", ", "Output" );
 	} catch ( ... ) {
 		throw;
 	}

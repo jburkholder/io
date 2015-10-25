@@ -11,7 +11,7 @@ static std::mutex state_main_mutex;
 void state_main() {
 	std::lock_guard<std::mutex> state_main_lock( state_main_mutex );
 	try {
-		print( "Hello", ", ", "State", "\n" );
+		debug_print( "Hello", ", ", "State" );
 	} catch ( ... ) {
 		throw;
 	}
