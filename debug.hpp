@@ -34,8 +34,20 @@
 
 	#define debug_print(...) print( __VA_ARGS__ )
 
+	#define debug_print_info debug_print("ERROR: LINE ", __LINE__)
+
+	#ifdef _MSC_VER
+		#define debug_print_function debug_print(__FUNCSIG__)
+	#else
+		#define debug_print_function debug_print(__func__)
+	#endif
+
 #else // _DEBUG
 
 	#define debug_print(...)
 
+	#define debug_print_info
+
+	#define debug_print_function
+	
 #endif // _DEBUG
