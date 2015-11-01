@@ -3,15 +3,33 @@
 #include <windows.h>
 //	For:
 //		WindowProc: https://msdn.microsoft.com/en-us/library/windows/desktop/ms633573(v=vs.85).aspx
+//		LPCWSTR: https://msdn.microsoft.com/en-us/library/windows/desktop/aa383751(v=vs.85).aspx
+//		GetModuleHandleW: https://msdn.microsoft.com/en-us/library/ms683199(v=vs.85).aspx
 //		WNDCLASSEXW: https://msdn.microsoft.com/en-us/library/windows/desktop/ms633577(v=vs.85).aspx
+//		Window Class Styles: https://msdn.microsoft.com/en-us/library/windows/desktop/ff729176(v=vs.85).aspx
+//		LoadIconW: https://msdn.microsoft.com/en-us/library/windows/desktop/ms648072(v=vs.85).aspx
+//		LoadCursorW: https://msdn.microsoft.com/en-us/library/windows/desktop/ms648391(v=vs.85).aspx
+//		GetStockObject: https://msdn.microsoft.com/en-us/library/dd144925(v=vs.85).aspx
+//		RegisterClassExW: https://msdn.microsoft.com/en-us/library/windows/desktop/ms633587(v=vs.85).aspx
+//		GetLastError: https://msdn.microsoft.com/en-us/library/windows/desktop/ms679360(v=vs.85).aspx
+//		GetDesktopWindow: https://msdn.microsoft.com/en-us/library/windows/desktop/ms633504(v=vs.85).aspx
+//		GetDC: https://msdn.microsoft.com/en-us/library/dd144871(v=vs.85).aspx
+//		GetDeviceCaps: https://msdn.microsoft.com/en-us/library/dd144877(v=vs.85).aspx
+//		ReleaseDC: https://msdn.microsoft.com/en-us/library/dd162920(v=vs.85).aspx
+//		CreateWindowExW: https://msdn.microsoft.com/en-us/library/ms632680(v=vs.85).aspx
+//		Extended Window Styles: https://msdn.microsoft.com/en-us/library/ff700543(v=vs.85).aspx
+//		Window Styles: https://msdn.microsoft.com/en-us/library/ms632600(v=vs.85).aspx
+//		ShowWindow: https://msdn.microsoft.com/en-us/library/ms633548(v=vs.85).aspx
+//		UpdateWindow: https://msdn.microsoft.com/en-us/library/dd145167(v=vs.85).aspx
+//		MSG: https://msdn.microsoft.com/en-us/library/ms644958(v=vs.85).aspx
+//		GetMessageW: https://msdn.microsoft.com/en-us/library/ms644936(v=vs.85).aspx
+//		TranslateMessage: https://msdn.microsoft.com/en-us/library/ms644955(v=vs.85).aspx
+//		DispatchMessageW: https://msdn.microsoft.com/en-us/library/ms644934(v=vs.85).aspx
+//		DefWindowProcW: https://msdn.microsoft.com/en-us/library/windows/desktop/ms633572(v=vs.85).aspx
 
 #include <sal.h>
 //	For:
 //		_In_
-
-#include <type_traits>
-//	For:
-//		std::result_of
 
 #include <temporary.hpp>
 
@@ -24,8 +42,11 @@ void input_main_for_windows_desktop() {
 	LPCWSTR window_class_name = L"window_class";
 	LPCWSTR window_name = L"IO Framework";
 
-	HINSTANCE instance_handle = GetModuleHandleW(
-		/*_In_opt_ LPCWSTR lpModuleName: */ nullptr // If this parameter is NULL, GetModuleHandle returns a handle to the file used to create the calling process (.exe file).
+	// GetModuleHandleW: https://msdn.microsoft.com/en-us/library/ms683199(v=vs.85).aspx
+	HINSTANCE instance_handle = static_cast<HINSTANCE>(
+		GetModuleHandleW(
+			/*_In_opt_ LPCWSTR lpModuleName: */ nullptr // If this parameter is NULL, GetModuleHandle returns a handle to the file used to create the calling process (.exe file).
+		)
 	);
 
 	debug_print("instance_handle: ", instance_handle);
@@ -44,7 +65,6 @@ void input_main_for_windows_desktop() {
 	/* WNDPROC:   */ window_class.lpfnWndProc = window_procedure;
 	/* int:       */ window_class.cbClsExtra = 0;
 	/* int:       */ window_class.cbWndExtra = 0;
-	// GetModuleHandleW: https://msdn.microsoft.com/en-us/library/windows/desktop/ms683199(v=vs.85).aspx
 	/* HINSTANCE: */ window_class.hInstance = instance_handle;
 	// LoadIconW: https://msdn.microsoft.com/en-us/library/windows/desktop/ms648072(v=vs.85).aspx
 	/* HICON:     */ window_class.hIcon = LoadIcon( nullptr, IDI_APPLICATION );
@@ -63,7 +83,6 @@ void input_main_for_windows_desktop() {
 			/* _In_ const WNDCLASSEXW * lpwcx: */ &window_class
 		)
 	) {
-		debug_print_info;
 		// GetLastError: https://msdn.microsoft.com/en-us/library/windows/desktop/ms679360(v=vs.85).aspx
 		DWORD last_error = GetLastError();
 		switch ( last_error ) {
@@ -99,7 +118,6 @@ void input_main_for_windows_desktop() {
 			/* _In_ HDC  hDC:  */ desktop_device_context
 		)
 	) {
-		debug_print_info;
 		// TODO: Add relevant error handling or exception.
 		return;
 	}
@@ -134,13 +152,11 @@ void input_main_for_windows_desktop() {
 		/* _In_     int       nHeight:      */ screen_height,
 		/* _In_opt_ HWND      hWndParent:   */ nullptr, // A handle to the parent or owner window of the window being created. To create a child window or an owned window, supply a valid window handle. This parameter is optional for pop-up windows.
 		/* _In_opt_ HMENU     hMenu:        */ nullptr, // A handle to a menu, or specifies a child-window identifier, depending on the window style. For an overlapped or pop-up window, hMenu identifies the menu to be used with the window; it can be NULL if the class menu is to be used.
-		// GetModuleHandleW: https://msdn.microsoft.com/en-us/library/windows/desktop/ms683199(v=vs.85).aspx
 		/* _In_opt_ HINSTANCE hInstance:    */ instance_handle,
 		/* _In_opt_ LPVOID    lpParam:      */ nullptr  // Pointer to a value to be passed to the window through the CREATESTRUCT structure (lpCreateParams member) pointed to by the lParam param of the WM_CREATE message. This message is sent to the created window by this function before it returns. lpParam may be NULL if no additional data is needed. 
 	);
 	
 	if ( window_handle == nullptr ) {
-		debug_print_info;
 		// TODO: Add error handling / exception since the window was not create
 		return;
 	}
@@ -158,7 +174,6 @@ void input_main_for_windows_desktop() {
 			/* _In_ HWND hWnd: */ window_handle
 		)
 	) {
-		debug_print_info;
 		// TODO: Add error handling / exception
 		return;
 	}
@@ -186,7 +201,6 @@ void input_main_for_windows_desktop() {
 		);
 		(void) window_procedure_return_value;
 	}
-	debug_print_info;
 }
 
 // WindowProc: https://msdn.microsoft.com/en-us/library/windows/desktop/ms633573(v=vs.85).aspx
