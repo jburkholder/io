@@ -63,7 +63,7 @@
     <ClCompile Include="output.cpp">
       <Filter>Source Files\5 - Output</Filter>
     </ClCompile>
-    <ClCompile Include="input_for_windows_desktop.cpp">
+    <ClCompile Include="input_from_windows_desktop.cpp">
       <Filter>Source Files\1 - Input</Filter>
     </ClCompile>
   </ItemGroup>
@@ -89,7 +89,7 @@
     <ClInclude Include="output_transformation.hpp">
       <Filter>Header Files\4 - Output Transformation</Filter>
     </ClInclude>
-    <ClInclude Include="input_for_windows_desktop.hpp">
+    <ClInclude Include="input_from_windows_desktop.hpp">
       <Filter>Header Files\1 - Input</Filter>
     </ClInclude>
   </ItemGroup>

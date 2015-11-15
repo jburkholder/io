@@ -152,7 +152,7 @@
   <ItemGroup>
     <ClCompile Include="input.cpp" />
     <ClCompile Include="input_transformation.cpp" />
-    <ClCompile Include="input_for_windows_desktop.cpp" />
+    <ClCompile Include="input_from_windows_desktop.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="output.cpp" />
     <ClCompile Include="output_transformation.cpp" />
@@ -162,7 +162,7 @@
     <ClInclude Include="debug.hpp" />
     <ClInclude Include="input.hpp" />
     <ClInclude Include="input_transformation.hpp" />
-    <ClInclude Include="input_for_windows_desktop.hpp" />
+    <ClInclude Include="input_from_windows_desktop.hpp" />
     <ClInclude Include="output.hpp" />
     <ClInclude Include="output_transformation.hpp" />
     <ClInclude Include="state.hpp" />

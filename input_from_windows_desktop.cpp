@@ -1,4 +1,4 @@
-#include <input_for_windows_desktop.hpp>
+#include <input_from_windows_desktop.hpp>
 
 #include <windows.h>
 //	For:
@@ -36,7 +36,7 @@
 // WindowProc: https://msdn.microsoft.com/en-us/library/windows/desktop/ms633573(v=vs.85).aspx
 LRESULT CALLBACK window_procedure( _In_ HWND, _In_ UINT, _In_ WPARAM, _In_ LPARAM );
 
-void input_main_for_windows_desktop() {
+void input_main_from_windows_desktop() {
 
 	// LPCWSTR: https://msdn.microsoft.com/en-us/library/windows/desktop/aa383751(v=vs.85).aspx
 	LPCWSTR window_class_name = L"window_class";

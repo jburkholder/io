@@ -6,9 +6,9 @@
 //		std::lock_guard
 
 #ifdef WINDOWS_DESKTOP
-#include <input_for_windows_desktop.hpp>
+#include <input_from_windows_desktop.hpp>
 //	For:
-//		input_main_for_windows_desktop
+//		input_main_from_windows_desktop
 #endif
 
 #include <temporary.hpp>
@@ -20,7 +20,7 @@ void input_main() {
 		debug_print( "Hello", ", ", "Input" );
 
 	#ifdef WINDOWS_DESKTOP
-		input_main_for_windows_desktop();
+		input_main_from_windows_desktop();
 	#endif
 
 	} catch ( ... ) {
